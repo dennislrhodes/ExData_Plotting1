@@ -50,13 +50,14 @@ with(epc, {
         ## adds legend
         legend("topright", legend = c("Sub_metering_1" , "Sub_metering_2" , "Sub_metering_3"), col = c("black","blue","red"),lty = 1, lwd = 2, cex = .30)
       
-        ##creates third graph
-        plot(dt, Voltage, type = "l", xlab = "datetime", ylab = "Voltage")
-        
-        ##creates fourth graph
-        plot(dt, grp, type = "l", xlab = "datetime", ylab = "Global_Reactive_Power")
         
 })
+
+##creates third graph
+plot(dt, Voltage, type = "l", xlab = "datetime", ylab = "Voltage")
+
+##creates fourth graph
+plot(dt, grp, type = "l", xlab = "datetime", ylab = "Global_Reactive_Power")
 
 ## exports graph as png
 dev.copy(png, "plot4.png")
