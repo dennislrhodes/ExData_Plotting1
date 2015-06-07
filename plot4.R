@@ -34,24 +34,22 @@ par(mar = c(4,4,2,1))
 ##changes the outer margins
 par(oma = c(0,0,2,0))
 
-
-with(epc, {                
-        ##creates first graph
-        plot(dt, gap, type = "l", xlab = "", ylab = "Global Active Power")
+               
+##creates first graph
+plot(dt, gap, type = "l", xlab = "", ylab = "Global Active Power")
                 
-        ##plot the second graph with sub metering 1
-        plot(dt, sub1, type = "l", xlab = "", ylab = "Energy sub metering")
+##plot the second graph with sub metering 1
+plot(dt, sub1, type = "l", xlab = "", ylab = "Energy sub metering")
         
-        ##add sub_metering 2 and 3 using the points argument
-        points(dt, sub2, type = "l", xlab = "", ylab = "", col = "red")
+##add sub_metering 2 and 3 using the points argument
+points(dt, sub2, type = "l", xlab = "", ylab = "", col = "red")
         
-        points(dt, sub3, type = "l", xlab = "", ylab = "", col = "blue" )
+points(dt, sub3, type = "l", xlab = "", ylab = "", col = "blue" )
         
-        ## adds legend
-        legend("topright", legend = c("Sub_metering_1" , "Sub_metering_2" , "Sub_metering_3"), col = c("black","blue","red"),lty = 1, lwd = 2, cex = .30)
+## adds legend
+legend("topright", legend = c("Sub_metering_1" , "Sub_metering_2" , "Sub_metering_3"), col = c("black","blue","red"),lty = 1, lwd = 2, cex = .30)
       
         
-})
 
 ##creates third graph
 plot(dt, Voltage, type = "l", xlab = "datetime", ylab = "Voltage")
