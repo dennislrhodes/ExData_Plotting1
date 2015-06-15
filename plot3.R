@@ -15,6 +15,11 @@ sub2<-as.numeric(as.character(sub_epc$Sub_metering_2))
 
 sub3<-as.numeric(as.character(sub_epc$Sub_metering_3))
 
+quartz()
+
+## creates graph as png
+dev.copy(png, "plot3.png")
+
 ##plot the first graph with sub metering 1
 plot(dt, sub1, type = "l", xlab = "", ylab = "Energy sub metering")
 
@@ -24,10 +29,7 @@ points(dt, sub2, type = "l", xlab = "", ylab = "", col = "red")
 points(dt, sub3, type = "l", xlab = "", ylab = "", col = "blue" )
 
 ## add legend
-legend("topright", legend = c("Sub_metering_1" , "Sub_metering_2" , "Sub_metering_3"), col = c("black","blue","red"),lty = 1, lwd = 2, cex = .5)
-
-## exports graph as png
-dev.copy(png, "plot3.png")
+legend("topright", legend = c("Sub_metering_1" , "Sub_metering_2" , "Sub_metering_3"), col = c("black","blue","red"),lty = 1)
 
 ##closes dev
 dev.off()
